@@ -18,18 +18,6 @@ module.exports = {
         let hoje = new Date()
         let horaMarcacao = hoje.getHours()+":"+hoje.getMinutes()
         const {id , dia} = req.param
-        //const Marcacao = await marca.create({ idfunc, dia })
-        //Marcacao.marca1 =
-        marca.find({ where: { idfunc = id } })
-        .on('success', function (marca) {
-        // Check if record exists in db
-        if (marca) {
-        marca.update({
-        marca1: horaMarcacao
-        })
-      .success(function () {})
-        }
-  })
         res.json(horaMarcacao)
     }
 }
