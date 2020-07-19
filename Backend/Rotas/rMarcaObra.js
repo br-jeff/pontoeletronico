@@ -8,8 +8,8 @@ routes.get("/marcacao", (req,res) => {
 routes.post("/cria/marcacao", (req,res) => {
     cMarcaObra.criaMarcacao(req,res)
 })
-routes.put("/update/:id", (req,res) =>  {
-    cMarcaObra.updateMarcacao(req,res)
+routes.put("/marca/online/:id", (req,res) =>  {
+    cMarcaObra.marcaOnline(req,res)
 })
 
 module.exports =  routes

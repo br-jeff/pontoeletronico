@@ -17,6 +17,6 @@ app.get("/lista", User)
 
 app.get("/marcacao",marca_obra)
 app.post("/cria/marcacao",marca_obra)
-app.put("/update/:id",marca_obra)
+app.put("/marca/online/:id",marca_obra)
 
 app.listen(3000,()=>{console.log("servidor iniciado")})

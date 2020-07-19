@@ -14,8 +14,9 @@ module.exports = {
         res.json(Marcacao)
     },
     
-    async updateMarcacao(req,res) {
+    async marcaOnline(req,res) {
         const hoje = new Date('2020-07-19')
+        let query
 
         const jaMarcou = await marca.findAll({
             attributes: [
@@ -25,12 +26,12 @@ module.exports = {
                 idfunc : 1,
                 dia: hoje,
         }})
-        .then(event => res.json(event))
+        .then(event => query = event)
         .catch(err => res.json(err))
-
-        //let hoje = new Date()
+        
+        
         let horaMarcacao = hoje.getHours()+":"+hoje.getMinutes()
         const {id , dia} = req.param
-        //res.json(horaMarcacao)
+        res.json(query)
     }
 }
