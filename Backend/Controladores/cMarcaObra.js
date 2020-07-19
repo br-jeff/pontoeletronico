@@ -9,15 +9,28 @@ module.exports = {
     },
 
     async criaMarcacao(req,res){
-        const { idfunc, dia } = req.body
-        const Marcacao = await marca.create({ idfunc, dia })
+        const { idFunc, dia } = req.body
+        const Marcacao = await marca.create({ idFunc, dia })
         res.json(Marcacao)
     },
     
     async updateMarcacao(req,res) {
-        let hoje = new Date()
+        const hoje = new Date('2020-07-19')
+
+        const jaMarcou = await marca.findAll({
+            attributes: [
+                'id'
+            ],
+        where: {
+                idfunc : 1,
+                dia: hoje,
+        }})
+        .then(event => res.json(event))
+        .catch(err => res.json(err))
+
+        //let hoje = new Date()
         let horaMarcacao = hoje.getHours()+":"+hoje.getMinutes()
         const {id , dia} = req.param
-        res.json(horaMarcacao)
+        //res.json(horaMarcacao)
     }
 }
