@@ -51,40 +51,8 @@ module.exports = {
                if(eVazio(procuraMarca(1,id))) {
                    atualizaMarca(1,horaMarcacao,id)
                    res.json('marca1') }
-                else{
-                    if(eVazio(procuraMarca(2,id))) {
-                        atualizaMarca(2,horaMarcacao,id)
-                        res.json('marca') }
-                    else{
-                        if(eVazio(procuraMarca(3,id))) {
-                            atualizaMarca(3,horaMarcacao,id)
-                            res.json('marca3') }
-                        else{
-                            if(eVazio(procuraMarca(4,id))) {
-                                atualizaMarca(4,horaMarcacao,id)
-                                res.json('marca4') }
-                            else{
-                                if(eVazio(procuraMarca(5,id))) {
-                                    atualizaMarca(5,horaMarcacao,id)
-                                    res.json('marca5') }
-                                else{
-                                    if(eVazio(procuraMarca(6,id))) {
-                                        atualizaMarca(6,horaMarcacao,id)
-                                        res.json('marca6') }
-                                    else{
-                                        if(eVazio(procuraMarca(7,id))) {
-                                            atualizaMarca(7,horaMarcacao,id)
-                                            res.json('marca7') }
-                                        else{  
-                                            atualizaMarca(8,horaMarcacao,id)
-                                            res.json('marca8') 
-                                        }
-                                    }
-                                }
-                            }
-                        }
-                    }
-                }
+                
             }
+        
     }
 }
