@@ -1,4 +1,4 @@
-const mMarcaObra = require('../../ModelosTabela/PontoEletronico/Obra/marca_obra')
+const mMarcaObra = require('../../../ModelosTabela/PontoEletronico/Obra/marca_obra')
 const marca = mMarcaObra.marcacoes
 
 async function atualizaMarca(numMarca,horaMarcacao,id){
