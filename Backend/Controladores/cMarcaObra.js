@@ -2,7 +2,6 @@ const {eVazio} = require('../FuncaoGlobal/objetos/eVazio')
 const mMarcaObra = require('../ModelosTabela/PontoEletronico/Obra/marca_obra')
 const marca = mMarcaObra.marcacoes
 
-
 module.exports = {
     async listaMarcacao(req,res){
         const lista = await marca.findAll()
@@ -15,28 +14,37 @@ module.exports = {
         const Marcacao = await marca.create({ idFunc, dia })
         res.json(Marcacao)
     },
-    
-    async marcaOnline(req,res) {
-        const hoje = new Date('2020-07-19')
-        let marcacoes
 
+    async marcaOnline(req,res) {
+        const hoje = new Date()
+        const mes = hoje.getMonth() + 1
+        const dia = new Date(hoje.getFullYear()+'-'+mes+'-'+hoje.getDate())
+        const horaMarcacao = hoje.getHours()+":"+hoje.getMinutes()
+        const idFunc = req.params.idFunc
+        let marcacoes
+        //res.json(dia)
         const jaMarcou = await marca.findAll({
-            attributes: [
-                'id'
-            ],
+            attributes: ['id'],
         where: {
-                idfunc : 1,
-                dia: hoje,
+                dia,
+                idFunc,
         }})
         .then(event => marcacoes = event)
-        .catch(err => res.json(err))
+        .catch(err => res.json('Erro ao buscar marcações'))
 
-        if (eVazio(marcacoes))
-            res.json('vazio')
-        else
-            res.json(marcacoes)
+        //res.json(marcacoes)
 
-        let horaMarcacao = hoje.getHours()+":"+hoje.getMinutes()
-        const {id , dia} = req.param
+        if (eVazio(marcacoes)) {
+            async function criaMarca(){
+                const novaMarca = await marca.create({
+                    idFunc,
+                    dia,
+                    marca1: horaMarcacao })
+            }
+            criaMarca()
+            res.json('Marcação Criada')}
+            else(
+                res.json('já existem marcações'))
+        
     }
 }

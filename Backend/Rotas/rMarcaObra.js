@@ -8,7 +8,7 @@ routes.get("/marcacao", (req,res) => {
 routes.post("/cria/marcacao", (req,res) => {
     cMarcaObra.criaMarcacao(req,res)
 })
-routes.put("/marca/online/:id", (req,res) =>  {
+routes.put("/marca/online/:idFunc", (req,res) =>  {
     cMarcaObra.marcaOnline(req,res)
 })
 
