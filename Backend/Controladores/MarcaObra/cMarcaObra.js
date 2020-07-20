@@ -1,5 +1,6 @@
-const {eVazio} = require('../FuncaoGlobal/objetos/eVazio')
-const mMarcaObra = require('../ModelosTabela/PontoEletronico/Obra/marca_obra')
+const {eVazio} = require('../../FuncaoGlobal/objetos/eVazio')
+const {atualizaMarca} = require('./atualizaMarca')
+const mMarcaObra = require('../../ModelosTabela/PontoEletronico/Obra/marca_obra')
 const marca = mMarcaObra.marcacoes
 
 module.exports = {
@@ -22,7 +23,7 @@ module.exports = {
         const horaMarcacao = hoje.getHours()+":"+hoje.getMinutes()
         const idFunc = req.params.idFunc
         let marcacoes
-        //res.json(dia)
+
         const jaMarcou = await marca.findAll({
             attributes: ['id'],
         where: {
@@ -43,8 +44,12 @@ module.exports = {
             }
             criaMarca()
             res.json('Marcação Criada')}
-            else(
-                res.json('já existem marcações'))
+            else
+            {   //já existe marcação async function criaMarca(){
+
+                atualizaMarca(5,horaMarcacao,marcacoes[0].id)
+                res.json('atualizado')
+            }
         
     }
 }
