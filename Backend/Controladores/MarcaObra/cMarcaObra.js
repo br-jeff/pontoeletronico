@@ -1,4 +1,5 @@
 const {eVazio} = require('../../FuncaoGlobal/objetos/eVazio')
+const {nVazio} = require('../../FuncaoGlobal/objetos/nVazio')
 const {atualizaMarca} = require('./funcoes/atualizaMarca')
 const {procuraMarca} = require('./funcoes/procuraMarca')
 const mMarcaObra = require('../../ModelosTabela/PontoEletronico/Obra/marca_obra')
@@ -49,7 +50,7 @@ module.exports = {
             {   //já existe marcação entao atualiza
             let id = marcacoes[0].id
 
-                for (var i = 8; i > 0; i--) {
+                for (var i = 1; i < 8; i++) {
                     if(eVazio(procuraMarca(i,id))) {
                         atualizaMarca(i,horaMarcacao,id)
                         res.json('marca'+i) 

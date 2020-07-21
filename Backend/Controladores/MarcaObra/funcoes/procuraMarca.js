@@ -9,7 +9,7 @@ async function procuraMarca(numMarca,id){
             attributes: ['id'],
         where: {
                 id:id,
-                marca1: null,
+                marca1: {[Op.ne]: null },
         }})
         .then(event => marcacoes = event)
         .catch(err => res.json('Erro ao buscar marcação 1'))
@@ -19,8 +19,8 @@ async function procuraMarca(numMarca,id){
             attributes: ['id'],
         where: {
                 id:id,
-                marca1: {[Op.ne]: null},
-                marca2: null,
+                marca2: {[Op.ne]: null},
+                marca3: null,
         }})
         .then(event => marcacoes = event)
         .catch(err => res.json('Erro ao buscar marcação 2'))
@@ -30,8 +30,8 @@ async function procuraMarca(numMarca,id){
             attributes: ['id'],
         where: {
                 id:id,
-                marca2: {[Op.ne]: null},
-                marca3: null,
+                marca3: {[Op.ne]: null},
+                marca4: null,
         }})
         .then(event => marcacoes = event)
         .catch(err => res.json('Erro ao buscar marcação 3'))
@@ -41,8 +41,8 @@ async function procuraMarca(numMarca,id){
             attributes: ['id'],
         where: {
                 id:id,
-                marca3:{[Op.ne]: null},
-                marca4: null,
+                marca4:{[Op.ne]: null},
+                marca5: null,
         }})
         .then(event => marcacoes = event)
         .catch(err => res.json('Erro ao buscar marcação 4'))
@@ -52,8 +52,8 @@ async function procuraMarca(numMarca,id){
             attributes: ['id'],
         where: {
                 id:id,
-                marca4:{[Op.ne]: null},
-                marca5: null,
+                marca5:{[Op.ne]: null},
+                marca6: null,
         }})
         .then(event => marcacoes = event)
         .catch(err => res.json('Erro ao buscar marcação 5'))
@@ -63,8 +63,8 @@ async function procuraMarca(numMarca,id){
             attributes: ['id'],
         where: {
                 id:id,
-                marca5:{[Op.ne]: null},
-                marca6: null,
+                marca6:{[Op.ne]: null},
+                marca7: null,
         }})
         .then(event => marcacoes = event)
         .catch(err => res.json('Erro ao buscar marcação 6'))
@@ -74,8 +74,8 @@ async function procuraMarca(numMarca,id){
             attributes: ['id'],
         where: {
                 id:id,
-                marca6:{[Op.ne]: null },
-                marca7: null,
+                marca7:{[Op.ne]: null },
+                marca8: null,
         }})
         .then(event => marcacoes = event)
         .catch(err => res.json('Erro ao buscar marcação 7'))
