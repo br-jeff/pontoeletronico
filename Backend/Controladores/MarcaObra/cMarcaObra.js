@@ -49,9 +49,13 @@ module.exports = {
             {   //já existe marcação entao atualiza
             let id = marcacoes[0].id
 
-            if(eVazio(procuraMarca(1,id))) {
-                atualizaMarca(1,horaMarcacao,id)
-                res.json('marca1') }
+            for(i=8 ;i< 1; i--) {
+                if(eVazio(procuraMarca(i,id))) {
+                    atualizaMarca(i,horaMarcacao,id)
+                    res.json('marca '+i) }
+                }
             }
+            
+            
     }
 }
