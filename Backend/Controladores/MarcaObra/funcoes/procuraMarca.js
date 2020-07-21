@@ -74,6 +74,7 @@ async function procuraMarca(numMarca,id){
             attributes: ['id'],
         where: {
                 id:id,
+                marca6:{[Op.ne]: null },
                 marca7: null,
         }})
         .then(event => marcacoes = event)
