@@ -1,5 +1,6 @@
 const mMarcaObra = require('../../../ModelosTabela/PontoEletronico/Obra/marca_obra')
 const marca = mMarcaObra.marcacoes
+const { Op } = require("sequelize");
 
 async function procuraMarca(numMarca,id){
     let marcacoes
