@@ -1,7 +1,8 @@
 const Sequelize  = require('sequelize');
-const bdconfig = require('./bancocfg')
+//const bdconfig =require('./bancocfg');
+const configGithub = require('./configGithub');
 
-const connection = new Sequelize(bdconfig)
+const connection = new Sequelize(configGithub)
 
 
 
