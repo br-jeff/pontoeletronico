@@ -1,6 +1,7 @@
 const Sequelize = require('sequelize')
-const bdconfig = require('../Bancodedados/bancocfg')
-const sequelize = new Sequelize(bdconfig);
+const mssql = require('../Bancodedados/bancocfg')
+const mysql = require('../Bancodedados/configGithub')
+const sequelize = new Sequelize(mysql);
 
 const Users = sequelize.define('users',{
   age:{
