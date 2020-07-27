@@ -1,4 +1,4 @@
-const mMarcaObra = require('../../../ModelosTabela/PontoEletronico/Obra/marca_obra')
+const mMarcaObra = require('../../../ModelosTabela/PontoEletronico/Obra/marcaObra')
 const marca = mMarcaObra.marcacoes
 const { Op } = require("sequelize");
 
@@ -31,7 +31,7 @@ async function atualizaMarca(numMarca,horaMarcacao,id){
             },
                 { where: {
                 id: id,
-                marca4: { [Op.ne]: null }
+                marca4: { [Op.ne]: null },
                 }})
         }
     if(numMarca == 6) {

@@ -1,8 +1,7 @@
 const {eVazio} = require('../../FuncaoGlobal/objetos/eVazio')
 const {nVazio} = require('../../FuncaoGlobal/objetos/nVazio')
 const {atualizaMarca} = require('./funcoes/atualizaMarca')
-const {procuraMarca} = require('./funcoes/procuraMarca')
-const mMarcaObra = require('../../ModelosTabela/PontoEletronico/Obra/marca_obra')
+const mMarcaObra = require('../../ModelosTabela/PontoEletronico/Obra/marcaObra')
 const marca = mMarcaObra.marcacoes
 
 module.exports = {
@@ -52,10 +51,10 @@ module.exports = {
             let mensagem = ''
 
             for(var i = 8 ; i > 2 ; i--) {
-                if(eVazio(procuraMarca(i,id))) {
+               // if(eVazio(procuraMarca(i,id))) {
                     atualizaMarca(i,horaMarcacao,id)
-                    mensagem += 'marca '+i
-                }
+                    mensagem += 'marca '
+                //}
             }
 
             res.json(mensagem)
