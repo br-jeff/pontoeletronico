@@ -1,10 +1,11 @@
-function eVazio(obj)  {
-    for(var prop in obj) {
-        if(obj.hasOwnProperty(prop))
-            return false;
+let eVazio = (obj) => {
+  for (var key in obj) {
+    if (Object.prototype.hasOwnProperty.call(obj, key)) {
+      return false;
     }
-    return true;
-}
+  }
+  return true;
+};
 
 
 module.exports = {eVazio}

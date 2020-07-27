@@ -49,14 +49,16 @@ module.exports = {
             else
             {   //já existe marcação entao atualiza
             let id = marcacoes[0].id
+            let mensagem = ''
 
-                for (var i = 1; i < 8; i++) {
-                    if(eVazio(procuraMarca(i,id))) {
-                        atualizaMarca(i,horaMarcacao,id)
-                        res.json('marca'+i) 
-                    }
-
+            for(var i = 8 ; i > 2 ; i--) {
+                if(eVazio(procuraMarca(i,id))) {
+                    atualizaMarca(i,horaMarcacao,id)
+                    mensagem += 'marca '+i
                 }
+            }
+
+            res.json(mensagem)
             }
     }
 }
