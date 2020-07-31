@@ -1,7 +1,7 @@
 const express = require('express')
 const app = express()
 const Sequelize = require('sequelize')
-const sequelize = new Sequelize(require('./Bancodedados/bancocfg'))
+//const sequelize = new Sequelize(require('./Bancodedados/bancocfg'))
 const bodyParser = require('body-parser')
 
 const rotaInicio = require('./Rotas/Inicio')

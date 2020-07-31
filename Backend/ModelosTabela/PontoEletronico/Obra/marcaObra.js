@@ -1,4 +1,4 @@
-const  mssql = require('../../../Bancodedados/bancocfg')
+//const  mssql = require('../../../Bancodedados/bancocfg')
 const mysql = require('../../../Bancodedados/configGithub')
 const  Sequelize  = require('sequelize')
 const  sequelize = new Sequelize(mysql)
