@@ -40,15 +40,15 @@ module.exports = {
 
         if (eVazio(marcacoes)) {
             async function criaMarca(){
-                /*const novaMarca = await marca.create({
+                const novaMarca = await marca.create({
                     idFunc,
                     dia,
                     marca1: horaMarcacao })
-                    */
+                    
 
 
                     const numMarca = await numMarcacao.create({
-                        idMarca : 3, //novaMarca.dataValues.id,
+                        idMarca : novaMarca.dataValues.id,
                         marca : 1
                         }).catch(err=> console.log(err)) 
                 }
