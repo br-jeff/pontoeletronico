@@ -15,35 +15,17 @@ const marcacoes = sequelize.define('marcacoes', {
     dia:  {
         type: Sequelize.DATE,
     },
-    marca1: {
-        type: Sequelize.STRING
-    },
-    marca2: {
-        type: Sequelize.STRING
-    },
-    marca3: {
-        type: Sequelize.STRING
-    },
-    marca4: {
-        type: Sequelize.STRING
-    },
-    marca5: {
-        type: Sequelize.STRING
-    },
-    marca6: {
-        type: Sequelize.STRING
-    },
-    marca7: {
-        type: Sequelize.STRING
-    },
-    marca8: {
-        type: Sequelize.STRING
-    },
+    marca1: { type: Sequelize.STRING },
+    marca2: { type: Sequelize.STRING },
+    marca3: { type: Sequelize.STRING },
+    marca4: { type: Sequelize.STRING },
+    marca5: { type: Sequelize.STRING },
+    marca6: { type: Sequelize.STRING },
+    marca7: { type: Sequelize.STRING },
+    marca8: { type: Sequelize.STRING },
 },
-{
-  tableName: 'NODE_PE_MARCACAO'
-}
-)
+
+{ tableName: 'NODE_PE_MARCACAO' } )
 
 marcacoes.sync()
 module.exports = {

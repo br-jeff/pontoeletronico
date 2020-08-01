@@ -1,22 +1,35 @@
-const Sequelize = require('sequelize')
-//const mssql = require('../Bancodedados/bancocfg')
-const mysql = require('../../../Bancodedados/configGithub')
-const sequelize = new Sequelize(mysql);
+//const  mssql = require('../../../Bancodedados/bancocfg')
+const  mysql = require('../../../Bancodedados/configGithub')
+const  Sequelize  = require('sequelize')
+const  sequelize = new Sequelize(mysql)
 
-const numMarcacao = sequelize.define('numMarcacao',{
-  marca:{
-    type: Sequelize.INTEGER
-   },
-  idMarca:{ // chave do model marcaObra
+const numMarca = sequelize.define('numMarca', {
+  id:{
     type: Sequelize.INTEGER,
+    autoIncrement: true,
     primaryKey: true,
   },
+  marca:{
+       type: Sequelize.INTEGER,
+  },
+  idMarca: {
+       type: Sequelize.STRING,
+    },
+    createdAt: {
+      allowNull: false,
+      type: Sequelize.DATE
+      },
+  updatedAt: {
+    allowNull: false,
+    type: Sequelize.DATE
+    }
+
 },
-{
-  tableName: 'NODE_PE_NUM_MARCACAO'
+
+{ tableName: 'NODE_PE_NUM_MARCACAO' } )
+
+numMarca.sync()
+module.exports = {
+    numMarca
+
 }
-);
-
-numMarcacao.sync()
-
-module.exports =  numMarcacao
