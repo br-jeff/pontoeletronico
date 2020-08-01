@@ -47,8 +47,9 @@ module.exports = {
    
                     const numMarca = await numMarcacao.create({
                         idMarca : novaMarca.dataValues.id,
-                        marca : 1
+                        marca : 2
                         }).catch(err=> console.log(err)) 
+                    
                 }
                 
                 criaMarca()
@@ -75,11 +76,10 @@ module.exports = {
                 const atualizaNumMarca = await numMarcacao.update(
                     { marca: numeroMarca + 1 },
                     { where: { idMarca: id } }
-                )
-                res.json('Marcacao '+numeroMarca)
+                ).then(  res.json('Marcacao '+numeroMarca))
+              
              }
              criaMarca()
-             //console.log(buscaMarca())
            
             }
     }
