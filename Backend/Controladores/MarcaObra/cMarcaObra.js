@@ -44,9 +44,8 @@ module.exports = {
                     idFunc,
                     dia,
                     marca1: horaMarcacao })
-                    
-
-
+                    .catch(err=> console.log(err)) 
+   
                     const numMarca = await numMarcacao.create({
                         idMarca : novaMarca.dataValues.id,
                         marca : 1
@@ -54,9 +53,7 @@ module.exports = {
                 }
                 
                 criaMarca()
-               
-            
-                
+
             res.json('Marcação Criada')}
             else
             {   //já existe marcação entao atualiza
