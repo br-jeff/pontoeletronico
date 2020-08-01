@@ -57,7 +57,7 @@ module.exports = {
             else {   //já existe marcação entao atualiza
 
             let id = marcacoes[0].id
-            let mensagem = ''
+
 
              async function criaMarca() {
                  const buscaMarca = await numMarcacao.findAll({
@@ -69,12 +69,18 @@ module.exports = {
                  
                 let numeroMarca = buscaMarca[0].dataValues.marca;
                 console.log({numeroMarca, horaMarcacao,id})
+                 
                 atualizaMarca(numeroMarca,horaMarcacao,id)
 
+                const atualizaNumMarca = await numMarcacao.update(
+                    { marca: numeroMarca + 1 },
+                    { where: { idMarca: id } }
+                )
+                res.json('Marcacao '+numeroMarca)
              }
              criaMarca()
              //console.log(buscaMarca())
-            res.json(mensagem)
+           
             }
     }
 }
