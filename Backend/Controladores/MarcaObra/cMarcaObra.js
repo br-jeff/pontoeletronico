@@ -1,5 +1,4 @@
 const {eVazio} = require('../../FuncaoGlobal/objetos/eVazio')
-const {nVazio} = require('../../FuncaoGlobal/objetos/nVazio')
 const {atualizaMarca} = require('./funcoes/atualizaMarca')
 const mNumMarca = require('../../ModelosTabela/PontoEletronico/Obra/numMarcacao')
 const mMarcaObra = require('../../ModelosTabela/PontoEletronico/Obra/marcaObra')
@@ -55,18 +54,26 @@ module.exports = {
                 criaMarca()
 
             res.json('Marcação Criada')}
-            else
-            {   //já existe marcação entao atualiza
+            else {   //já existe marcação entao atualiza
+
             let id = marcacoes[0].id
             let mensagem = ''
 
-            for(var i = 8 ; i > 2 ; i--) {
-               // if(eVazio(procuraMarca(i,id))) {
-                    atualizaMarca(i,horaMarcacao,id)
-                    mensagem += 'marca '
-                //}
-            }
+             async function criaMarca() {
+                 const buscaMarca = await numMarcacao.findAll({
+                     attributes: ['marca'],
+                     where: {
+                         idMarca: id,
+                     }
+                 }).catch( err => console.log(err))
+                 
+                let numeroMarca = buscaMarca[0].dataValues.marca;
+                console.log({numeroMarca, horaMarcacao,id})
+                atualizaMarca(numeroMarca,horaMarcacao,id)
 
+             }
+             criaMarca()
+             //console.log(buscaMarca())
             res.json(mensagem)
             }
     }
