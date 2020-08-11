@@ -5,7 +5,17 @@ import styles from './styles'
 function PontoItem() {
     return ( 
     <View style={styles.container}>
-            <Text> teste</Text>
+            <Text style={styles.nome} >   Nome </Text>
+
+            <View style={styles.marcaDiaContainer} >
+                <Text style={styles.marca}> 1  </Text>
+                <Text style={styles.dia}> dia  </Text>
+            </View>
+
+            <Text style={styles.tipo}> Tipo: Online </Text>
+            <Text style= {styles.hora}> hora  </Text>
+            
+           
     </View>
     )
 }
