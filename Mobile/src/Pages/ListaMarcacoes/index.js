@@ -1,15 +1,23 @@
 import React from 'react'
-import {View, Text} from 'react-native'
+import {View, Text, ScrollView} from 'react-native'
 import HeaderBack from '../../components/HeaderBack'
 import styles from './styles'
+import PontoItem from '../../components/PontoItem'
 
 
 function ListaMarcacoes(){
     return (
-        <View style={styles.container}>
+        <>
             <HeaderBack/>
-            <Text> Lista MArca </Text>
-        </View>
+            <View style={styles.container}>
+                    <PontoItem/>
+                    <PontoItem/>
+                    <PontoItem/>
+                    <PontoItem/>
+                   
+                <Text> Lista MArca </Text>
+            </View>
+        </>
          )
 }
 
