@@ -11,9 +11,7 @@ function ListaMarcacoes(){
             <HeaderBack/>
             <View style={styles.container}>
                     <PontoItem/>
-                    <PontoItem/>
-                    <PontoItem/>
-                    <PontoItem/>
+                 
                    
                 <Text> Lista MArca </Text>
             </View>
