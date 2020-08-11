@@ -4,7 +4,7 @@ import * as React from 'react';
 import { View, Text } from 'react-native';
 import { NavigationContainer } from '@react-navigation/native';
 import { createStackNavigator } from '@react-navigation/stack';
-import ListaMacacao from './src/Pages/ListaMarcacoes'
+import ListaMarcacoes from './src/Pages/ListaMarcacoes'
 
 
 
@@ -14,7 +14,7 @@ function App() {
   return (
     <NavigationContainer>
       <Stack.Navigator>
-        <Stack.Screen name="Home" component={ListaMacacao} />
+        <Stack.Screen name="ListaMarcacoes" component={ListaMarcacoes} />
       </Stack.Navigator>
     </NavigationContainer>
   );
