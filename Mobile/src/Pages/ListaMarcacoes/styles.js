@@ -11,14 +11,14 @@ const styles = StyleSheet.create({
     btMarcaPonto: {
         width: '47%',
         height: 60,
-        backgroundColor: '#0276FD',
+        backgroundColor: '#1060dd',
         borderRadius: 8,
         justifyContent: "center"
     },
     btAtualizaMarca: {
         width: '47%',
         height: 60,
-        backgroundColor: '#0276FD',
+        backgroundColor: '#1060dd',
         borderRadius: 8,
         justifyContent: "center"
     },
