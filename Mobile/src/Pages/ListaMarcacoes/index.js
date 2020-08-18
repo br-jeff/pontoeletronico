@@ -4,9 +4,14 @@ import HeaderBack from '../../components/HeaderBack'
 import styles from './styles'
 import PontoItem from '../../components/PontoItem'
 import { RectButton } from 'react-native-gesture-handler'
+import api from '../../Services/Eritram/api'
 
 
 function ListaMarcacoes(){
+    async function marcacaoPonto() {
+       const res = await api.put("marca/online/2")
+       return res
+    }
     return (
         <>
             <HeaderBack>
@@ -16,7 +21,7 @@ function ListaMarcacoes(){
                        <Text style={styles.atualizaPonto} > Atualizar </Text> 
                     </RectButton>
 
-                    <RectButton style={styles.btAtualizaMarca}>
+                    <RectButton style={styles.btAtualizaMarca} onPress={marcacaoPonto}>
                         <Text style={styles.marcarPonto}> Marcar Ponto</Text>
                     </RectButton>
                 </View>
