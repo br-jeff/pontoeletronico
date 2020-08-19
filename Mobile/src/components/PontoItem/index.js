@@ -7,6 +7,7 @@ function PontoItem() {
     return ( 
         <View style={styles.container}>
             <View style={styles.containerCircle}> 
+
             <View style={styles.circle}>
                     <Text style={styles.numMarca}> 1 </Text>
                 </View>
@@ -21,7 +22,7 @@ function PontoItem() {
                 <Text style={styles.hora}>Hora: 19:00 </Text>
             </View>
             <View style ={styles.onlineESinc}> 
-                <Text style={styles.sincronizada}>Náo Sincronizada</Text>
+                <Text style={styles.sincronizada}>Sincronizado</Text>
               <Text style={styles.tipo}>Online</Text>
             </View>
             
