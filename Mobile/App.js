@@ -1,20 +1,20 @@
 // In App.js in a new project
 
 import * as React from 'react';
-import { View, Text } from 'react-native';
 import { NavigationContainer } from '@react-navigation/native';
 import { createStackNavigator } from '@react-navigation/stack';
-import ListaMarcacoes from './src/Pages/ListaMarcacoes'
-
+import ListaMarcacoes from './src/Pages/ListaMarcacoes';
+import QrCode from './src/Pages/QrCode'
 
 
 const Stack = createStackNavigator();
 
-function App() {
+function App({ navigation }) {
   return (
     <NavigationContainer>
       <Stack.Navigator headerMode="none">
         <Stack.Screen name="ListaMarcacoes" component={ListaMarcacoes} />
+        <Stack.Screen name="QrCode" component={QrCode} />
       </Stack.Navigator>
     </NavigationContainer>
   );
