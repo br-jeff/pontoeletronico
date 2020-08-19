@@ -2,18 +2,19 @@ import {StyleSheet} from 'react-native';
 
 const styles = StyleSheet.create({
   container: {
-    flex: 1,
-    flexDirection: 'column',
-    backgroundColor: 'black',
+    width: 390,
+    height:390,
+    marginLeft: 10,
+    justifyContent: 'center',
   },
   preview: {
-    flex: 1,
-    justifyContent: 'flex-end',
-    alignItems: 'center',
+    width: 390,
+    height:390,
+    justifyContent: 'center',
   },
   capture: {
     flex: 0,
-    backgroundColor: '#fff',
+    backgroundColor: '#1060dd',
     borderRadius: 5,
     padding: 15,
     paddingHorizontal: 20,
