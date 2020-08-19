@@ -9,9 +9,13 @@ import api from '../../Services/Eritram/api'
 
 function ListaMarcacoes(){
     async function marcacaoPonto() {
-       const res = await api.put("marca/online/2")
-       return res
+        const idFunc = 1
+        const res = await api.put("marca/online/",{params:{idFunc}})
+      
     }
+    
+    
+
     return (
         <>
             <HeaderBack>
