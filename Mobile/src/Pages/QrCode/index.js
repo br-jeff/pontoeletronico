@@ -2,9 +2,12 @@ import React from 'react';
 import {View, Text} from 'react-native';
 import HeaderBack from '../../components/HeaderBack';
 import QRCodeScanner from 'react-native-qrcode-scanner';
+import {useNavigation} from '@react-navigation/native';
 import styles from './styles';
 
-function ListaMarcacoes() {
+function QrCode() {
+    const navigation = useNavigation()
+
   return (
     <>
       <HeaderBack/>
@@ -12,7 +15,7 @@ function ListaMarcacoes() {
         <View style={styles.qrContainer}> 
             <QRCodeScanner showMarker={true} 
             checkAndroid6Permissions={true}
-            onRead={(e) => {alert(e.data)}}
+            onRead={(e) => {navigation.navigate('Foto')}}
             cameraStyle={styles.QrCode}  />
         </View>
       </View>
@@ -20,4 +23,4 @@ function ListaMarcacoes() {
   );
 }
 
-export default ListaMarcacoes;
+export default QrCode;
