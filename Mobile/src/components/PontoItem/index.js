@@ -1,20 +1,31 @@
-import React from 'react'
-import {View,Text} from 'react-native'
-import styles from './styles'
+import React from 'react';
+import {View, Text} from 'react-native';
+import styles from './styles';
 
 
 function PontoItem() {
     return ( 
         <View style={styles.container}>
-            <Text style={styles.nome} >   Nome </Text>
+            <View style={styles.containerCircle}> 
+            <View style={styles.circle}>
+                    <Text style={styles.numMarca}> 1 </Text>
+                </View>
 
-            <View style={styles.marcaDiaContainer} >
-                <Text style={styles.marca}> 1 </Text>
-                <Text style={styles.dia}> dia </Text>
+             <Text style={styles.nome} >   Jefferson Ferreira Da Silva </Text>
+
+             
             </View>
+            
+            <View style={styles.marcaDiaContainer} >
+                <Text style={styles.dia}> Dia: 18/08/2020  </Text>
+                <Text style={styles.hora}>Hora: 19:00 </Text>
+            </View>
+            <View style ={styles.onlineESinc}> 
+                <Text style={styles.sincronizada}>Náo Sincronizada</Text>
+              <Text style={styles.tipo}>Online</Text>
+            </View>
+            
 
-            <Text style={styles.tipo}>Tipo: Online</Text>
-            <Text style= {styles.hora}>hora</Text>
      </View>
     )
 }

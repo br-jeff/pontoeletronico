@@ -9,13 +9,43 @@ const styles = StyleSheet.create({
         backgroundColor: '#fff' ,
         elevation: 1,
         borderRadius: 8,
-        alignItems: 'center'
+       
+    },
+    circle:{
+        width:30,
+        height: 30,
+        borderRadius: 15,
+        backgroundColor: '#1060dd',
+        alignItems: 'center',
+        justifyContent: 'center',
+    },
+    numMarca:{
+        color: '#fff',
+        fontSize: 18
+    },
+    containerCircle:{
+        flexDirection: 'row',
+        justifyContent: "flex-start",
+        paddingTop: 8,
+        alignItems: "center",
+        justifyContent: "flex-start",
+        paddingLeft: 8 ,
     },
     nome:{
+        fontSize: 18,
+        color:'#1060dd',
+        fontWeight: "bold",
 
     },
+    onlineESinc:{
+        flexDirection: 'row',
+        justifyContent: "space-between",
+        alignItems: "flex-end",
+        padding: 8,
+        marginTop: 10,
+    },
     tipo:{
-   
+        color: '#1060dd'
     },
     marca:{
      
@@ -27,8 +57,15 @@ const styles = StyleSheet.create({
 
     },
     marcaDiaContainer:{
-    
+        flexDirection: 'row',
+        alignItems: "center",
+        justifyContent: "center",
     },
+    sincronizada: {
+        color: '#666'
+    }
+   
+   
 })
 
 export default styles
