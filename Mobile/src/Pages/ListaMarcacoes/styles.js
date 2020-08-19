@@ -45,6 +45,11 @@ const styles = StyleSheet.create({
         textAlign: 'center',
         justifyContent: 'center',
     },
+    scroll: {
+        flex: 1,
+        marginTop: - 40,
+        height: 100,
+    },
 
 })
 

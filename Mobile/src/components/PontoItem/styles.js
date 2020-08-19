@@ -3,12 +3,12 @@ import {StyleSheet} from 'react-native'
 
 const styles = StyleSheet.create({
     container: {
-        marginTop: -55,
-        height: 110,
+        height:95,
         width: '100%', 
         backgroundColor: '#fff' ,
         elevation: 1,
         borderRadius: 8,
+        marginBottom: 10,
        
     },
     circle:{
@@ -42,7 +42,7 @@ const styles = StyleSheet.create({
         justifyContent: "space-between",
         alignItems: "flex-end",
         padding: 8,
-        marginTop: 10,
+  
     },
     tipo:{
         color: '#1060dd'
@@ -58,8 +58,7 @@ const styles = StyleSheet.create({
     },
     marcaDiaContainer:{
         flexDirection: 'row',
-        alignItems: "center",
-        justifyContent: "center",
+       marginLeft: 50,
     },
     sincronizada: {
         color: '#666'

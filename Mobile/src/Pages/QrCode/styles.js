@@ -1,13 +1,25 @@
 import {StyleSheet} from 'react-native';
 
 const styles = StyleSheet.create({
-    container: {
-        flex:1,
+    Container: {
+        justifyContent: "center",
+        width: "100%",
+        height: "100%",
         alignItems: 'center',
-        textAlign: 'center',
         backgroundColor: '#fafafa',
-        padding: 9,
     },
+    rContainer: {
+        justifyContent: "center",
+        alignItems: 'center',
+        backgroundColor: '#fafafa',
+    },
+    QrCode:{
+        marginLeft: 30,
+        width: 330,
+        height:330,
+        justifyContent: 'center',
+    }
+    ,
   
 })
 

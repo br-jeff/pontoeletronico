@@ -35,9 +35,38 @@ const navigation = useNavigation();
         </View>
       </HeaderBack>
 
-      <View style={styles.container}>
-        <PontoItem />
-      </View>
+
+          <ScrollView style={styles.scroll}  
+           contentContainerStyle={{
+                paddingHorizontal:16,
+                paddingBottom:10,
+                marginBottom:300,
+            }}>
+            <PontoItem />
+            <PontoItem />
+            <PontoItem />
+            <PontoItem />
+            <PontoItem />
+            <PontoItem />
+            <PontoItem />
+            <PontoItem />
+            <PontoItem />
+            <PontoItem />
+            <PontoItem />
+            <PontoItem />
+            <PontoItem />
+            <PontoItem />
+            <PontoItem />
+            <PontoItem />
+            <PontoItem />
+            <PontoItem />
+            <PontoItem />
+            
+
+          </ScrollView>
+         
+
+       
     </>
   );
 }
