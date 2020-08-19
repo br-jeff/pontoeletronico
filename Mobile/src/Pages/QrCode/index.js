@@ -12,7 +12,7 @@ function ListaMarcacoes() {
         <View style={styles.qrContainer}> 
             <QRCodeScanner showMarker={true} 
             checkAndroid6Permissions={true}
-            onRead={(param) => {console.log(param)}}
+            onRead={(e) => {alert(e.data)}}
             cameraStyle={styles.QrCode}  />
         </View>
       </View>

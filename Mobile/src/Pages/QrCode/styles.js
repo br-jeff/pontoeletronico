@@ -14,9 +14,9 @@ const styles = StyleSheet.create({
         backgroundColor: '#fafafa',
     },
     QrCode:{
-        marginLeft: 30,
-        width: 330,
-        height:330,
+        marginLeft: 10,
+        width: 390,
+        height:390,
         justifyContent: 'center',
     }
     ,
