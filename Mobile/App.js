@@ -14,10 +14,9 @@ function App({ navigation }) {
   return (
     <NavigationContainer>
       <Stack.Navigator headerMode="none">
-      <Stack.Screen name="Foto" component={Foto} />
-        <Stack.Screen name="ListaMarcacoes" component={ListaMarcacoes} />
-        <Stack.Screen name="QrCode" component={QrCode} />
-       
+       <Stack.Screen name="ListaMarcacoes" component={ListaMarcacoes} />
+       <Stack.Screen name="Foto" component={Foto} />
+      <Stack.Screen name="QrCode" component={QrCode} />
       </Stack.Navigator>
     </NavigationContainer>
   );

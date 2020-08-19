@@ -15,11 +15,11 @@ class Foto extends PureComponent {
               this.camera = ref;
             }}
             style={styles.preview}
-            type={RNCamera.Constants.Type.front}
+            type={RNCamera.Constants.Type.back}
             flashMode={RNCamera.Constants.FlashMode.on}
             androidCameraPermissionOptions={{
-              title: 'Permission to use camera',
-              message: 'Clique em Sim para Aceitar o acesso a camera',
+              title: 'Permissao de camera',
+              message: 'Clique em ACEITAR para Aceitar o acesso a camera',
               buttonPositive: 'Aceitar',
               buttonNegative: ' ',
             }}
