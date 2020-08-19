@@ -13,7 +13,7 @@ const Stack = createStackNavigator();
 function App() {
   return (
     <NavigationContainer>
-      <Stack.Navigator>
+      <Stack.Navigator headerMode="none">
         <Stack.Screen name="ListaMarcacoes" component={ListaMarcacoes} />
       </Stack.Navigator>
     </NavigationContainer>
