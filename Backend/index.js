@@ -1,2 +1,3 @@
 const app = require('./app')
-app.listen(3000,()=>{console.log("servidor iniciado")})
+const port = process.env.PORT || 3001
+app.listen(port,()=>{console.log(`server running on ${port}`)})
