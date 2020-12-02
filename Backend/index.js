@@ -1,6 +1,7 @@
 const express = require('express')
 const app = express()
 const Sequelize = require('sequelize')
+require('dotenv').config();
 //const sequelize = new Sequelize(require('./Bancodedados/bancocfg'))
 const bodyParser = require('body-parser')
 
