@@ -1,7 +1,6 @@
-//const  mssql = require('../../../Bancodedados/bancocfg')
-const mysql = require('../../../Bancodedados/configGithub')
-const  Sequelize  = require('sequelize')
-const  sequelize = new Sequelize(mysql)
+const mysql = require('../../../database/config')
+const Sequelize  = require('sequelize')
+const sequelize = new Sequelize(mysql)
 
 const marcacoes = sequelize.define('marcacoes', {
     id:{
