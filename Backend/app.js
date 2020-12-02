@@ -1,6 +1,5 @@
 const express = require('express')
 const app = express()
-const Sequelize = require('sequelize')
 require('dotenv').config();
 
 const rotaInicio = require('./Rotas/Inicio')
