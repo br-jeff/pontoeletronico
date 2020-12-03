@@ -1,5 +1,4 @@
-const mMarcaObra = require('../../../app/models/marcacao')
-const marca = mMarcaObra.marcacoes
+const marca = require('../../../app/models/marcacao')
 const { Op } = require("sequelize");
 
 async function atualizaMarca(numMarca,horaMarcacao,id){

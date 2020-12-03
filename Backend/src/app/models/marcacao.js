@@ -1,6 +1,5 @@
-const mysql = require('../../config/database')
-const Sequelize  = require('sequelize')
-const sequelize = new Sequelize(mysql)
+const Sequelize = require('sequelize')
+const sequelize = require('../../config/database')
 
 const marcacoes = sequelize.define('marcacoes', {
     id:{
