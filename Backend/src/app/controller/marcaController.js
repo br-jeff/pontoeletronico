@@ -6,8 +6,8 @@ module.exports = {
     async listaMarcacao(req,res){
         const lista = await marca.findAll()
         .then(event => res.json(event))
-        .catch(err => res.json(err))
-    },
+        .catch(err => res.json(err))   
+     },
 
     async criaMarcacao(req,res){
         const { idFunc, dia } = req.body
