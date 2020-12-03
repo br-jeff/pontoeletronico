@@ -1,4 +1,4 @@
-const mMarcaObra = require('../../../ModelosTabela/PontoEletronico/Obra/marcaObra')
+const mMarcaObra = require('../../../app/models/marcacao')
 const marca = mMarcaObra.marcacoes
 const { Op } = require("sequelize");
 

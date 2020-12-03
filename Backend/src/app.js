@@ -3,11 +3,12 @@ const app = express()
 require('dotenv').config();
 
 const routes = require('./app/routes')
-const numMarcacao = require('./Rotas/numMarcacao')
-const marcaObra = require('./Rotas/rMarcaObra')
+const numMarcacao = require('./app/rotas/numMarcacao')
+const marcaObra = require('./app/rotas/rMarcaObra')
 
 app.use(express.json())
 app.use(routes)
+
 app.get("/marca/online/:idFunc/:numMarca", numMarcacao)
 
 app.get("/marcacao",marcaObra)

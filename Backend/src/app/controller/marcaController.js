@@ -1,7 +1,6 @@
-const {eVazio} = require('../../FuncaoGlobal/objetos/eVazio')
 const {atualizaMarca} = require('./funcoes/atualizaMarca')
-const mNumMarca = require('../../ModelosTabela/PontoEletronico/Obra/numMarcacao')
-const mMarcaObra = require('../../ModelosTabela/PontoEletronico/Obra/marcaObra')
+const mNumMarca = require('../models/numMarcacao')
+const mMarcaObra = require('../models/marcacao')
 const marca = mMarcaObra.marcacoes
 const numMarcacao = mNumMarca.numMarca
 
@@ -37,7 +36,7 @@ module.exports = {
 
         //res.json(marcacoes)
 
-        if (eVazio(marcacoes)) {
+        if (marcacoes) {
             async function criaMarca(){
                 const novaMarca = await marca.create({
                     idFunc,

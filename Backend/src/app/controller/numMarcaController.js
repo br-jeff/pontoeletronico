@@ -1,4 +1,4 @@
-const numMarcacao = require('../../ModelosTabela/PontoEletronico/Obra/numMarcacao')
+const numMarcacao = require('../models/numMarcacao')
 
 
 module.exports = {

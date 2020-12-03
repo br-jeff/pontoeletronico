@@ -1,6 +1,6 @@
 const express = require('express')
 const routes = express.Router()
-const cMarcaObra = require('../Controladores/MarcaObra/cMarcaObra')
+const cMarcaObra = require('../controller/marcaController')
 
 routes.get("/marcacao", (req,res) => {
     cMarcaObra.listaMarcacao(req,res)
