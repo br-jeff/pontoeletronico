@@ -1,8 +1,8 @@
-# ponto eletronico - QRCODE
+# Ponto Eletronico - QRcode
 
-Codigo backend antigo, preciso refatorar os codigos, a sintax está muito fora do padrão
+Codigo backend antigo, preciso refatorar os codigos, a sintaxe está muito fora do padrão
 vou executar os seguites passos nessa ordem:
-- agora que coloquei arquitetura moderna tenho que criar testges
+- agora que coloquei arquitetura moderna tenho que criar testes
 - simplificar a lógica dos controllers
 - revisar todo codigo antigo e tentar simplificar
 - criar parte web para poder registrar novos funcionarios.
