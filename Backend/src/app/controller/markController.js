@@ -1,6 +1,10 @@
+const fs = require('fs')
+const QRCode = require('qrcode')
+const path = require('path')
+
 module.exports = {
+
     index(req,res){
-        //todo recive ID and check on database        
-        res.send('Hello Friend')
+        res.send('Rota para marcar ponto')
     }
 }
