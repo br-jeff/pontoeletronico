@@ -1,12 +1,5 @@
-<<<<<<< HEAD
-# ponto eletronico - QRCODE
-
-Codigo backend antigo, preciso refatorar os codigos, a sintax está muito fora do padrão
-=======
 # Ponto Eletronico - QRcode
-
 Codigo backend antigo, preciso refatorar os codigos, a sintaxe está muito fora do padrão
->>>>>>> fd4f040a4e08b9097c87c7df79cd3e1dbf941fc1
 vou executar os seguites passos nessa ordem:
 - agora que coloquei arquitetura moderna tenho que criar testes
 - simplificar a lógica dos controllers
