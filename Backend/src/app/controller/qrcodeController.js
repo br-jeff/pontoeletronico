@@ -2,8 +2,9 @@ const QRCode = require('qrcode')
 module.exports = {
     
     generate(req,res){
-        let qrText = 'test for qr text'
-        QRCode.toDataURL(qrText, function (err, url) {
+        const jsonTextQR = JSON.stringify(req.body)
+  
+        QRCode.toDataURL(jsonTextQR, function (err, url) {
             res.json( { 
                 imageQRLink: url
             })
