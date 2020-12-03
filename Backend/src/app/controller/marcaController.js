@@ -1,8 +1,6 @@
 const {atualizaMarca} = require('./funcoes/atualizaMarca')
-const mNumMarca = require('../models/numMarcacao')
-const mMarcaObra = require('../models/marcacao')
-const marca = mMarcaObra.marcacoes
-const numMarcacao = mNumMarca.numMarca
+const marca = require('../models/marcacao')
+const numMarcacao = require('../models/numMarcacao')
 
 module.exports = {
     async listaMarcacao(req,res){

@@ -27,7 +27,4 @@ const marcacoes = sequelize.define('marcacoes', {
 { tableName: 'NODE_PE_MARCACAO' } )
 
 marcacoes.sync()
-module.exports = {
-    marcacoes
-
-}
+module.exports = marcacoes

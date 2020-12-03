@@ -28,9 +28,6 @@ const numMarca = sequelize.define('numMarca', {
 { tableName: 'NODE_PE_NUM_MARCACAO' } )
 
 numMarca.sync()
-module.exports = {
-    numMarca
-
-}
+module.exports = numMarca
 
 
