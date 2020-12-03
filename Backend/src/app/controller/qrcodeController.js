@@ -13,7 +13,9 @@ module.exports = {
     },
 
     read(req,res) {
-        res.send('Read')
+        const {name,company,cpf,pin} = req.body
+        let jsonRecived = {name,company,cpf,pin}
+        res.json(jsonRecived)
 
     }
 
