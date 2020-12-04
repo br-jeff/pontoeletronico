@@ -1,16 +1,11 @@
 const User = require('../models/User')
-module.exports = {
-  
-    async createUser(name,cpf,company){
-        const userCreate = await User.create({
-            name,
-            cpf,
-            company
-        })
-        return userCreate
-    },
 
-    index(req,res){
-        res.send('rotaok')
+
+
+module.exports = {  
+    async create(req,res){
+        const {name,cpf,company,pin} = req.body
+        const userCreated = await User.create({name,cpf,company,pin})
+        res.send(userCreated)
     }
 }
