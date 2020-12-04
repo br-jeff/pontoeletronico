@@ -9,6 +9,7 @@ const userMark = sequelize.define('userMark', {
     },
     cpf: {
         type: Sequelize.STRING,
+        primaryKey: true,
     },
     marca1: { type: Sequelize.STRING },
     name: { type: Sequelize.STRING },
