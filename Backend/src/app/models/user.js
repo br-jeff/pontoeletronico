@@ -11,8 +11,9 @@ const userMark = sequelize.define('userMark', {
         type: Sequelize.STRING,
         primaryKey: true,
     },
-    marca1: { type: Sequelize.STRING },
+    company: { type: Sequelize.STRING },
     name: { type: Sequelize.STRING },
+    pin: { type: Sequelize.STRING },
 },
 
 { tableName: 'userMark' } )

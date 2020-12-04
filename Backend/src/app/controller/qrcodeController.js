@@ -13,7 +13,6 @@ module.exports = {
     },
 
     read(req,res){
-       // let jsonRecived = {name,company,cpf,pin}
         res.json('readQR')
     }
 
