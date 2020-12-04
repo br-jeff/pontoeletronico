@@ -12,11 +12,9 @@ module.exports = {
          })       
     },
 
-    read(req,res) {
-        const {name,company,cpf,pin} = req.body
-        let jsonRecived = {name,company,cpf,pin}
-        res.json(jsonRecived)
-
+    read(req,res){
+       // let jsonRecived = {name,company,cpf,pin}
+        res.json('readQR')
     }
 
 }

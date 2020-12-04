@@ -1,22 +1,22 @@
 const Sequelize = require('sequelize')
 const sequelize = require('../../config/database')
 
-const numMarca = sequelize.define('numMarca', {
+const marks = sequelize.define('marks', {
   id:{
     type: Sequelize.INTEGER,
     autoIncrement: true,
     primaryKey: true,
   },
-  marca:{
+  marks:{
        type: Sequelize.INTEGER,
   },
-  idMarca: {
-       type: Sequelize.STRING,
-    },
-    createdAt: {
+  cpf:{
+    type: Sequelize.STRING,
+  },
+  createdAt: {
       allowNull: false,
       type: Sequelize.DATE
-      },
+    },
   updatedAt: {
     allowNull: false,
     type: Sequelize.DATE
@@ -24,9 +24,9 @@ const numMarca = sequelize.define('numMarca', {
 
 },
 
-{ tableName: 'NODE_PE_NUM_MARCACAO' } )
+{ tableName: 'user_marks' } )
 
-numMarca.sync()
-module.exports = numMarca
+marks.sync()
+module.exports = marks
 
 
