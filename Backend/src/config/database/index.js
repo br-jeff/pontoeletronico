@@ -1,3 +1,4 @@
 const config = require('./config')
 const Sequelize  = require('sequelize')
-module.exports = new Sequelize(config)
+const connetion = new Sequelize(config)
+module.exports = connetion

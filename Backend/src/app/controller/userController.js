@@ -1,10 +1,11 @@
+const User = require('../models/User')
 module.exports = {
   
-    async createUser(){
-        const userCreate = await user.create({
-            name: 'test',
-            cpf: '123',
-            company: 'test'
+    async createUser(name,cpf,company){
+        const userCreate = await User.create({
+            name,
+            cpf,
+            company
         })
         return userCreate
     },

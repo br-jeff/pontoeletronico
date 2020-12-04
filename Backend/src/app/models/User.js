@@ -1,5 +1,5 @@
 const Sequelize = require('sequelize')
-const sequelize,{Sequelize} = require('../../config/database')
+const sequelize = require('../../config/database')
 
 const userMark = sequelize.define('userMark', {
     id:{
