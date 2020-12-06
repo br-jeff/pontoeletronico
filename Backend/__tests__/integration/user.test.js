@@ -31,11 +31,8 @@ it('should not create user',async()=> {
         .send('test')
 
    expect(response.body).toEqual( 
-    expect.not.objectContaining({
-        name: expect.any(String),
-        cpf: expect.any(String),
-        company: expect.any(String),
-        pin: expect.any(String),
-    })
+        expect.objectContaining({
+            msg: expect.any(String)
+        })
     )
 })
