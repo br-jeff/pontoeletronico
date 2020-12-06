@@ -8,7 +8,7 @@
     "start": "node src/index",
     "dev": "nodemon src/index"
   },
-  "author": "",
+  "author": "Kalavh",
   "license": "ISC",
   "dependencies": {
     "cors": "^2.8.5",

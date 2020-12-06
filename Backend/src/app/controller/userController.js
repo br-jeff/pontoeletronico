@@ -1,7 +1,4 @@
 const User = require('../models/User')
-
-
-
 module.exports = {  
     async create(req,res){
         try{
