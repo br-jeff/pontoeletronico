@@ -1,6 +1,5 @@
 const QRCode = require('qrcode')
-module.exports = {
-    
+module.exports = {    
     generate(req,res){
         const {name,company,cpf,pin} = req.body
         const jsonTextQR = JSON.stringify({name,company,cpf,pin})
@@ -15,5 +14,4 @@ module.exports = {
     read(req,res){
         res.json('readQR')
     }
-
 }
