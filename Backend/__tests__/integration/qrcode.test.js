@@ -20,3 +20,17 @@ it('should recive link of qrcode',async()=> {
         { imageQRLink: qrLink })
     
 })
+
+
+it('should not recive link of qrcode',async()=> {
+    const response = await 
+        request(app)
+        .post('/qrcode/generate')
+        .send('jsonBody')
+
+    expect(response.body).toEqual( 
+       expect.objectContaining({
+            msg: expect.any(String)
+       })
+   )
+})
