@@ -8,7 +8,7 @@ const createJson = {
 	pin:"1234"
 }
 
-it('teste home',async()=> {
+it('should create user and return user data',async()=> {
     const response = await 
         request(app)
         .post('/adm/user/create')
@@ -24,3 +24,18 @@ it('teste home',async()=> {
     )
 })
 
+it('should not create user',async()=> {
+    const response = await 
+        request(app)
+        .post('/adm/user/create')
+        .send('test')
+
+   expect(response.body).toEqual( 
+    expect.not.objectContaining({
+        name: expect.any(String),
+        cpf: expect.any(String),
+        company: expect.any(String),
+        pin: expect.any(String),
+    })
+    )
+})
