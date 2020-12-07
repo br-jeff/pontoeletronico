@@ -1,17 +1,26 @@
+const User = require('../models/User')
 module.exports = {
-
-    index(req,res){
+   async index(req,res){
         try{
-            const {mark,cpf } = req.body
-            if(!mark || !cpf) 
-             return res.json({msg: 'Precisa enviar um json contendo mark e cpf'})
+            const {cpf} = req.body
+            if(!cpf) 
+             return res.json({msg: 'Precisa enviar um json contendo cpf'})
+                    
+            const checkUser = await User.findOne({
+                 where:{
+                    cpf
+                }
+            })
+             
+            if(!checkUser) 
+                return res.json( {msg: 'erro usuario não cadastrado '  })
+                           
             
-            
-           return res.jsn({msg :'Rota para marcar ponto'})
-     
+
+            return res.json(checkUser) 
         }
         catch(err){
-            return res.json('erro ao tentar fazer marcação' + err)
+            return res.json( {msg: 'erro ao tentar fazer marcação ' + err })
         }
     }
 }
