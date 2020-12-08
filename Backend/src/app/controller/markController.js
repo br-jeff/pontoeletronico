@@ -54,7 +54,7 @@ module.exports = {
                 let arrayMarkString = `[${arrayMarks}]`
                 let idMark = checkUserMarkToday.dataValues.id
 
-                const UpdateMark = await Mark.update(
+                await Mark.update(
                     { marks: arrayMarkString } ,
                     { where: { id : idMark } }
                 )
