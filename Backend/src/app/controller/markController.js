@@ -47,8 +47,12 @@ module.exports = {
              }
             else{
                 let markStringValue = checkUserMarkToday.dataValues.marks
-                console.log(markStringValue)
-                return res.json('test')
+                let lastBracketPos = markStringValue.length
+                let removeBrackets = markStringValue.slice(1,lastBracketPos -1 )
+                let arrayMarks = removeBrackets.split(',')
+
+                arrayMarks.push(HourAndMinutes)
+                return res.json(arrayMarks)
             }
              
              
