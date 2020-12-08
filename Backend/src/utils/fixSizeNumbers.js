@@ -1,16 +1,19 @@
-function fixSize(num,size){
-    let numStr = String(num)
+function fixSize(numStr,size){
+    if (typeof numStr != "string"){
+       numStr = String(numStr)
+    }
+
     let zero = '0'
     
     if (numStr.length < size){
         let dif = size - numStr.length
-        console.log(dif)
         for(i=1;i < dif;i++){
             zero+= '0'
         }
+        return String(zero + numStr)
     }
-    return String(zero + num)
+    
+    else return numStr
 
 }
-
-module.exports = fixSize()
+module.exports = fixSize
