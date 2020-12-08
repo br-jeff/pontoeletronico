@@ -1,6 +1,8 @@
 const User = require('../models/User')
 const Mark = require('../models/Marks')
+const DateAndHourNow = require('../../utils/dateAndTimeNow')
 const {Op} = require('sequelize')
+const dateAndTimeNow = require('../../utils/dateAndTimeNow')
 module.exports = {
    async index(req,res){
         try{
@@ -16,13 +18,9 @@ module.exports = {
             
             if(!checkUser) 
                 return res.json( {msg: 'erro usuario não cadastrado'  })
-            
-                let dateObj = new Date()
-                let day = dateObj.getDate()
-                let month = dateObj.getMonth() + 1
-                let year = dateObj.getFullYear()
-                let dateToday = new Date(year + "-" + month + "-" + day)
-                let HourAndMinutes = `${dateObj.getHours()}:${dateObj.getMinutes()}`
+           
+                let dateToday = dateAndTimeNow.dateNow()
+                let HourAndMinutes = dateAndTimeNow.hourNow()
 
                 const checkUserMarkToday = await Mark.findOne({
                 where:{
@@ -56,12 +54,10 @@ module.exports = {
                 let arrayMarkString = `[${arrayMarks}]`
                 let idMark = checkUserMarkToday.dataValues.id
 
-                console.log(idMark)
                 const UpdateMark = await Mark.update(
                     { marks: arrayMarkString } ,
-                    {
-                        where: { id : idMark },
-                    },)
+                    { where: { id : idMark } }
+                )
 
                 let markUpdated = {
                     msg : 'marcação feita',
@@ -69,8 +65,6 @@ module.exports = {
                 }
                 return res.json(markUpdated)
             }
-             
-             
         }
         catch(err){
             return res.json( {msg: `erro ao tentar fazer marcação  ${err} ` })
