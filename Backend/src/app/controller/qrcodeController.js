@@ -16,7 +16,7 @@ module.exports = {
         }
         catch(err) {
             console.log('err')
-            return res.json({msg: 'erro ao criar qr code'})
+            return res.json({msg: 'erro ao criar qr code'+err})
         }
               
     },

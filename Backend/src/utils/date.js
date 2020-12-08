@@ -9,11 +9,15 @@ module.exports = {
         return new Date(year+"-"+month+"-"+day)
     },
     //YYYY-MM-DD
-    date: (dateString,addDay) => {
+    stringToDate: (dateString) => {
             let date = new Date(dateString);
-            if(addDay)
-                date.setDate(date.getDate() + addDay);
             return date;
-    }
+    },
+    addDate: (dateString,addDay) => {
+        let date = new Date(dateString);
+        if(addDay)
+            date.setDate(date.getDate() + addDay);
+        return date;
+}
     
 }

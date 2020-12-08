@@ -75,7 +75,7 @@ module.exports = {
         if(!cpf || !date)
             return res.json({ msg: 'Precisa ter cpf e date na query' })
 
-        let dateSearch = dateConverter.date(date)
+        let dateSearch = dateConverter.stringToDate(date)
 
         const findMark = await Mark.findOne({
             where: { 
@@ -85,8 +85,7 @@ module.exports = {
         })
         if(!findMark)
             res.json({msg: 'não possui marcação no dia ou cpf Inválido'})
-        
+
         res.send(findMark)
-    }
-    
+    }    
 }

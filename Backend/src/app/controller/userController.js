@@ -11,8 +11,7 @@ module.exports = {
             return res.send(userCreated)
         }
         catch(err) {
-            console.log(err)
-            return res.json({msg : 'erro ao criar usuario'})
+            return res.json({msg : 'erro ao criar usuario '+err})
         }
     }
 }
