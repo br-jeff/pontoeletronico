@@ -70,17 +70,20 @@ module.exports = {
     },
 
     async list(req,res){
-        const { cpf, day} = req.query
-        let dateSearch = dateConverter.justDate(day)
-        let nextDate = dateConverter.justDate(day).setDate(dateSearch.getDate() + 1)
-        console.log(nextDate)
-        const marks = Mark.findAll({
+        const { cpf, date } = req.query
+
+        if(!cpf || !date)
+            return res.json({ msg: 'Precisa ter cpf e date na query' })
+
+        let dateSearch = dateConverter.justDate(date)
+
+        const marks = await Mark.findOne({
             where: { 
                 cpf,
                 date: dateSearch, 
             }
         })
-
+        
         res.send(marks)
     }
     
