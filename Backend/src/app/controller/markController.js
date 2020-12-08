@@ -21,7 +21,7 @@ module.exports = {
                 let day = dateObj.getDate()
                 let month = dateObj.getMonth() + 1
                 let year = dateObj.getFullYear()
-                let dateToday = year + "-" + month + "-" + day
+                let dateToday = new Date(year + "-" + month + "-" + day)
                 let HourAndMinutes = `${dateObj.getHours()}:${dateObj.getMinutes()}`
 
                 const checkUserMarkToday = await Mark.findOne({
@@ -46,8 +46,9 @@ module.exports = {
                 return res.json(createdUser)
              }
             else{
-                checkUserMarkToday
-                return res.json(checkUserMarkToday)
+                let markStringValue = checkUserMarkToday.dataValues.marks
+                console.log(markStringValue)
+                return res.json('test')
             }
              
              
