@@ -2,6 +2,7 @@ const User = require('../models/User')
 const Mark = require('../models/Marks')
 const {Op} = require('sequelize')
 const dateAndTimeNow = require('../../utils/dateAndTimeNow')
+const dateConverter = require('../../utils/date')
 module.exports = {
    async create(req,res){
         try{
@@ -24,14 +25,15 @@ module.exports = {
                 const checkUserMarkToday = await Mark.findOne({
                 where:{
                     cpf,
-                    createdAt: { [Op.gte]:dateToday }
+                    date: dateToday 
                    },
                 })
 
             if(!checkUserMarkToday){
                 const createMark = await Mark.create({
                     cpf,
-                    marks: HourAndMinutes 
+                    marks: HourAndMinutes,
+                    date: dateToday
                 })
 
                 let createdUser = {
@@ -67,8 +69,19 @@ module.exports = {
         }
     },
 
-    list(req,res){
-        res.send('list route')
+    async list(req,res){
+        const { cpf, day} = req.query
+        let dateSearch = dateConverter.justDate(day)
+        let nextDate = dateConverter.justDate(day).setDate(dateSearch.getDate() + 1)
+        console.log(nextDate)
+        const marks = Mark.findAll({
+            where: { 
+                cpf,
+                date: dateSearch, 
+            }
+        })
+
+        res.send(marks)
     }
     
 }
