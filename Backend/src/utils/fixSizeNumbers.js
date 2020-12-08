@@ -13,7 +13,7 @@ function fixSize(numStr,size){
         return String(zero + numStr)
     }
     
-    else return numStr
+    return numStr
 
 }
 module.exports = fixSize
