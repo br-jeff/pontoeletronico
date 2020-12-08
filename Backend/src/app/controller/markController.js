@@ -1,10 +1,9 @@
 const User = require('../models/User')
 const Mark = require('../models/Marks')
-const DateAndHourNow = require('../../utils/dateAndTimeNow')
 const {Op} = require('sequelize')
 const dateAndTimeNow = require('../../utils/dateAndTimeNow')
 module.exports = {
-   async index(req,res){
+   async create(req,res){
         try{
             const {cpf} = req.body
             if(!cpf) 
