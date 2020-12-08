@@ -8,7 +8,7 @@ const marks = sequelize.define('marks', {
     primaryKey: true,
   },
   marks:{
-       type: Sequelize.INTEGER,
+       type: Sequelize.STRING,
   },
   cpf:{
     type: Sequelize.STRING,

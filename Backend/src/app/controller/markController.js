@@ -29,18 +29,28 @@ module.exports = {
                     cpf,
                     createdAt: { [Op.gte]:dateToday }
                    },
-               })
+                })
 
             if(!checkUserMarkToday){
                 const createMark = await Mark.create({
                     cpf,
-                    mark: `[${HourAndMinutes}]` 
+                    marks: `[${HourAndMinutes}]` 
                 })
-                
-                return res.send(createMark)
+
+                let createdUser = {
+                    msg: 'Primeira marcação do dia',
+                    cpf,
+                    marks: createMark.marks
+                }
+
+                return res.json(createdUser)
              }
-              
-            return res.json('need to create update') 
+            else{
+                checkUserMarkToday
+                return res.json(checkUserMarkToday)
+            }
+             
+             
         }
         catch(err){
             return res.json( {msg: `erro ao tentar fazer marcação  ${err} ` })
