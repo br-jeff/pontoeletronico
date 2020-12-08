@@ -31,7 +31,7 @@ module.exports = {
             if(!checkUserMarkToday){
                 const createMark = await Mark.create({
                     cpf,
-                    marks: `[${HourAndMinutes}]` 
+                    marks: HourAndMinutes 
                 })
 
                 let createdUser = {
@@ -44,13 +44,10 @@ module.exports = {
              }
             else{
                 let markStringValue = checkUserMarkToday.dataValues.marks
-                let lastBracketPos = markStringValue.length
-                let removedBrackets = markStringValue.slice(1,lastBracketPos -1 )
-
-                let arrayMarks = removedBrackets.split(',')
+                let arrayMarks = markStringValue.split(';')
                 arrayMarks.push(HourAndMinutes)
 
-                let arrayMarkString = `[${arrayMarks}]`
+                let arrayMarkString = arrayMarks.join(';')
                 let idMark = checkUserMarkToday.dataValues.id
 
                 await Mark.update(
@@ -69,8 +66,9 @@ module.exports = {
             return res.json( {msg: `erro ao tentar fazer marcação  ${err} ` })
         }
     },
-    
-    async list(req,res){
-        res.send('list')
+
+    list(req,res){
+        res.send('list route')
     }
+    
 }
