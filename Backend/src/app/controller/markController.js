@@ -68,5 +68,9 @@ module.exports = {
         catch(err){
             return res.json( {msg: `erro ao tentar fazer marcação  ${err} ` })
         }
+    },
+    
+    async list(req,res){
+        res.send('list')
     }
 }
