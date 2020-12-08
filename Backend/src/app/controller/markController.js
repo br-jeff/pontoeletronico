@@ -48,11 +48,26 @@ module.exports = {
             else{
                 let markStringValue = checkUserMarkToday.dataValues.marks
                 let lastBracketPos = markStringValue.length
-                let removeBrackets = markStringValue.slice(1,lastBracketPos -1 )
-                let arrayMarks = removeBrackets.split(',')
+                let removedBrackets = markStringValue.slice(1,lastBracketPos -1 )
 
+                let arrayMarks = removedBrackets.split(',')
                 arrayMarks.push(HourAndMinutes)
-                return res.json(arrayMarks)
+
+                let arrayMarkString = `[${arrayMarks}]`
+                let idMark = checkUserMarkToday.dataValues.id
+
+                console.log(idMark)
+                const UpdateMark = await Mark.update(
+                    { marks: arrayMarkString } ,
+                    {
+                        where: { id : idMark },
+                    },)
+
+                let markUpdated = {
+                    msg : 'marcação feita',
+                    marks : arrayMarkString
+                }
+                return res.json(markUpdated)
             }
              
              
