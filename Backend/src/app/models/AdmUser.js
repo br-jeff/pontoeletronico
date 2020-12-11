@@ -16,8 +16,9 @@ const Adm = sequelize.define('adm',{
   hooks: {
     beforeSave : async (adm) => {
       if(adm.password){
+        let keybcrypt = process.env.BRCYPT_KEY
         let salt = bcrypt.genSaltSync(4)
-        return adm.password_hash = bcrypt.hashSync('bcrypt',salt)
+        return adm.password_hash = bcrypt.hashSync(keybcrypt,salt)
       }
     }
   },
