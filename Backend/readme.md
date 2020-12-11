@@ -26,4 +26,21 @@
   "date": "2020-12-08T00:00:00.000Z",}
 
 
+## Adm Public
+
+### POST - /adm/registe
+#### Resume: register
+- body =
+    {user,password,company}
+#### Return 
+ - {msg: adm criado}
+
+
+### POST - /adm/login
+#### Resume: login
+- body =
+    {user,password}
+#### Return 
+ - {jwt}
+
 
