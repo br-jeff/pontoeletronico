@@ -1,32 +1,30 @@
 const Sequelize = require('sequelize')
 const sequelize = require('../../config/database')
-const bcrypt = require('bcrypt')
+const bcrypt = require('bcryptjs');
+require('dotenv').config();
 
-const admUser = sequelize.define('admUser', {
+const Adm = sequelize.define('adm',{
   id:{
     type: Sequelize.INTEGER,
     autoIncrement: true,
     primaryKey: true,
   },
-  user:{
-       type: Sequelize.STRING,
-  },
-  password:{
-    type: Sequelize.VIRTUAL,
-  },
-  password_hash: DataTypes.STRING,
-},
-{
-    hooks: {
-        beforeSave: async admUser => {
-            if(admUser.password)
-              admUser.password_hash = await bcrypt.hash(admUser.password,4)
-        }
+  password: Sequelize.VIRTUAL,
+  password_hash: Sequelize.STRING, 
+  company: Sequelize.STRING, 
+},{
+  hooks: {
+    beforeSave : async (adm) => {
+      if(adm.password){
+        let salt = bcrypt.genSaltSync(4)
+        return adm.password_hash = bcrypt.hashSync('bcrypt',salt)
+      }
     }
-},
-{ tableName: 'adm_users'})
-
-admUser.sync()
-module.exports = marks
+  },
+  sequelize
+})
 
 
+
+Adm.sync()
+module.exports = Adm

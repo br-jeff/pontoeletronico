@@ -1,6 +1,6 @@
 # Routes documentation
 
-# QRCode Routes
+## QRCode Routes
 
 ### POST - /qrcode/generate 
 #### Resume: Generate QRCode
@@ -8,6 +8,8 @@
     {name,company,cpf,pin} 
 #### Return 
  - {imageQRLink}
+
+## Mark Routes
 
 ### POST - /mark/create
 #### Resume: create Mark
