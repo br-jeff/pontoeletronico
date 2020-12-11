@@ -8,7 +8,7 @@ module.exports = {
         try{
             const {cpf} = req.body
             if(!cpf) 
-             return res.json({msg: 'Precisa enviar um json contendo cpf'})
+             return res.stauts(400).json({msg: 'Precisa enviar um json contendo cpf'})
                     
             const checkUser = await User.findOne({
                  where:{
@@ -42,7 +42,7 @@ module.exports = {
                     marks: createMark.marks
                 }
 
-                return res.json(createdUser)
+                return res.status(200).json(createdUser)
              }
             else{
                 let markStringValue = checkUserMarkToday.dataValues.marks
@@ -61,11 +61,11 @@ module.exports = {
                     msg : 'marcação feita',
                     marks : arrayMarkString
                 }
-                return res.json(markUpdated)
+                return res.status(200).json(markUpdated)
             }
         }
         catch(err){
-            return res.json( {msg: `erro ao tentar fazer marcação  ${err} ` })
+            return res.status(500).json( {msg: `erro ao tentar fazer marcação  ${err} ` })
         }
     },
 

@@ -5,7 +5,7 @@ module.exports = {
             const {user,password,company} = req.body
 
             if(!user || !password || !company)
-               return res.status(500).json({msg: 'formato deve ter user,password e company'})
+               return res.status(400).json({msg: 'formato deve ter user,password e company'})
             
                const adm = await admUser.create({
                 user,

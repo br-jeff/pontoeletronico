@@ -9,14 +9,14 @@ module.exports = {
                 return res.json({msg: 'Formato tem que ter name,company,cpf e pin'})
             
             QRCode.toDataURL(jsonTextQR, function (err, url) {
-              return res.json( { 
+              return res.status(200).json( { 
                     imageQRLink: url
                 })
              })     
         }
         catch(err) {
             console.log('err')
-            return res.json({msg: 'erro ao criar qr code'+err})
+            return res.status(500).json({msg: 'erro ao criar qr code'+err})
         }
               
     },
