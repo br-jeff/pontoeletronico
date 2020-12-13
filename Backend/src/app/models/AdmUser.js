@@ -1,7 +1,7 @@
 const Sequelize = require('sequelize')
 const sequelize = require('../../config/database')
 const bcrypt = require('bcryptjs');
-const { password } = require('../../config/database/config');
+const jwt = require('jsonwebtoken')
 require('dotenv').config();
 
 const Adm = sequelize.define('adm',{
@@ -26,9 +26,11 @@ const Adm = sequelize.define('adm',{
 })
 
 Adm.prototype.checkPassword = async function(password){     
-  let compare = await bcrypt.compareSync(password,this.password_hash)
-  console.log(compare)
-  return compare
+  return await bcrypt.compareSync(password,this.password_hash)
+}
+
+Adm.prototype.generateToken = function() { 
+  return jwt.sign({id:this.id},process.env.JWT_KEY)
 }
 
 Adm.sync()
