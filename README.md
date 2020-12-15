@@ -1,5 +1,5 @@
 # Ponto Eletronico - QRcode
-
+- Backend MVP is finish, there are some improvements but all functions is working.
 
 
 ![Lista](https://github.com/kalavh/pontoeletronico/blob/master/Screenshots/lista.jpeg)
