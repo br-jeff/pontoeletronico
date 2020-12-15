@@ -13,12 +13,13 @@ const Adm = sequelize.define('adm',{
   password: Sequelize.VIRTUAL,
   password_hash: Sequelize.STRING, 
   company: Sequelize.STRING, 
+  user: Sequelize.STRING, 
 },{
   hooks: {
-    beforeSave : async (adm) => {
+    beforeSave : (adm) => {
       if(adm.password){
         let salt = bcrypt.genSaltSync(4)
-        return adm.password_hash = bcrypt.hashSync(adm.password,salt)
+        return adm.password_hash =  bcrypt.hashSync(adm.password,salt)
       }
     }
   },

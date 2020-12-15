@@ -1,4 +1,3 @@
-const { compare } = require('bcryptjs')
 const jwt = require('jsonwebtoken')
 require('dotenv').config()
 

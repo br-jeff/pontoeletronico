@@ -11,8 +11,9 @@ module.exports = {
                 user,
                 password,
                 company
-            })
-            res.status(200).json({msg: 'register route'})
+             })
+               
+            res.status(200).json({user: adm.user,company : adm.company})
         }
         catch { 
             (err)=>{
