@@ -26,8 +26,8 @@ const Adm = sequelize.define('adm',{
   sequelize
 })
 
-Adm.prototype.checkPassword = async function(password){     
-  return await bcrypt.compareSync(password,this.password_hash)
+Adm.prototype.checkPassword = function(password){     
+  return bcrypt.compareSync(password,this.password_hash)
 }
 
 Adm.prototype.generateToken = function() { 

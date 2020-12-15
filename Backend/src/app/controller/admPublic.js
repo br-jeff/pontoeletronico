@@ -1,4 +1,4 @@
-const admUser = require('../models/AdmUser')
+const Adm = require('../models/AdmUser')
 module.exports = {
     async register(req,res){
         try{
@@ -7,7 +7,7 @@ module.exports = {
             if(!user || !password || !company)
                return res.status(400).json({msg: 'formato deve ter user,password e company'})
             
-               const adm = await admUser.create({
+               const adm = await Adm.create({
                 user,
                 password,
                 company
@@ -21,7 +21,25 @@ module.exports = {
             } 
         }
     },
-    login(req,res){
-        res.json({msg: 'login route'})
+    async login(req,res){
+        const { user,password }  = req.body
+
+        const findAdm = await Adm.findOne({
+            where: {user}
+        })
+
+        if(!findAdm)
+            res.status(401).json(`Usuario inválido`)
+
+        let checkPassword = findAdm.checkPassword(password) 
+
+        if(checkPassword){
+               let token =  findAdm.generateToken()
+               res.send(token)
+        }
+        else 
+            res.status(401).json(`senha inválida`)
+
+        
     }
 }
