@@ -44,3 +44,12 @@
  - {jwt}
 
 
+
+### POST - /adm/user/create'
+#### Resume: create user
+- body =
+    {user,password}
+- Header = JWT
+#### Return 
+-User created
+
