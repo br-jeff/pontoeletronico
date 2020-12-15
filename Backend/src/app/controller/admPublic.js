@@ -36,8 +36,8 @@ module.exports = {
         if(checkPassword){
                let token =  findAdm.generateToken()
                res.setHeader('Authorization',`Bearer ${token}`)
+               res.send('Seja Bem vindo, '+user)
         }
-        else 
-            res.status(401).json(`senha inválida`)
+        else res.status(401).json('senha inválida')
     }
 }
